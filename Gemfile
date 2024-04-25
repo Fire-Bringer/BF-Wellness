@@ -83,6 +83,7 @@ gem "view_component", "~> 3.0"
 gem "tailwindcss-rails"
 
 gem "cloudinary"
+gem "dotenv-rails"
 
 group :test do
   gem "capybara-screenshot", "~> 1.0"
