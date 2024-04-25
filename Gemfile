@@ -71,6 +71,7 @@ group :test do
 
 end
 
+# Custom Added
 gem 'solidus'
 
 gem "solidus_auth_devise", "~> 2.5"
@@ -80,6 +81,8 @@ gem "solidus_support"
 gem "truncate_html"
 gem "view_component", "~> 3.0"
 gem "tailwindcss-rails"
+
+gem "cloudinary"
 
 group :test do
   gem "capybara-screenshot", "~> 1.0"
