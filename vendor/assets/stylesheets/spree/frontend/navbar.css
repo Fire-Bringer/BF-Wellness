@@ -1,0 +1,48 @@
+.main-color{
+  background-color: #5693E3;
+}
+
+.categories-menu{
+  background-color: #5693E3;
+}
+
+.categories-menu > ul{
+  margin-bottom: 0;
+  margin-left: 1rem;
+}
+
+.navbar-bg{
+  background-color: #5693E3;
+}
+
+.nav-store-title{
+  font-family: "Cormorant Garamond", serif;
+  font-optical-sizing: auto;
+  color: white;
+}
+
+.taxon-nav > a{
+  font-family: "Bodoni Moda", serif;
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: #eee148;
+    transform: scale(1.2); /* Zoom in on hover */
+  }
+}
+
+.search-text{
+  color: white;
+}
+
+.svg-img{
+  fill: #ffffff;
+}
+
+#search-form{
+  background-color: white;
+}
+
+.bf-icon{
+  width: clamp(1rem, 3vw, 3rem);
+}

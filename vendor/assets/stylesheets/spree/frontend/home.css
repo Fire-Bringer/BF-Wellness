@@ -1,0 +1,209 @@
+/* Header Section */
+.hero_area{
+  height: 85vh;
+  background: url('bf1.png') no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.hero_filter{
+  backdrop-filter: brightness(70%);
+  height: 100%;
+  width: 100%;
+}
+
+.hero-img{
+  transform: rotate(10deg);
+  height: clamp(20rem, 40vw, 25rem);
+  width: auto;
+}
+
+.img-area{
+  height: 70vh;
+  width: auto;
+}
+
+.hero-img-container{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+/* Footer Info Section */
+
+.info_section{
+  background-color: #093a7b;
+  color: #ffffff;
+  padding: 90px 0 45px 0;
+  text-align: center;
+}
+.info_section h5{
+  margin-bottom: 15px;
+  font-size: 24px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.info_section p, li{
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+}
+.info_section .info_links ul{
+  padding: 0;
+}
+.info_section .info_links ul li{
+  list-style-type: none;
+}
+.info_section .info_links ul li a{
+  display: inline-block;
+  color: #ffffff;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+.info_section .info_links ul li a:hover{
+  color: #eee148;
+}
+
+.info_section .info_form form input{
+  outline: none;
+  width: 100%;
+  padding: 7px 10px;
+}
+.info_section .info_form form button{
+  padding: 8px 35px;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  background: #5693E3;
+  margin-top: 15px;
+  text-transform: uppercase;
+}
+.info_section .info_form form button:hover{
+  background-color: #eee148;
+  font-weight: bold;
+  color: #093a7b;
+  border: 1px solid #093a7b;
+}
+.info_section .info_form .social_box{
+  margin-top: 35px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.info_section .info_form .social_box a{
+  margin-right: 25px;
+  color: #ffffff;
+  font-size: 24px;
+}
+.info_section .info_form .social_box a:hover{
+  color: #eee148;
+}
+
+.info_contact, .info_info, .info_links{
+  margin-bottom: 2rem;
+}
+
+/* Bottom Footer */
+.footer_section{
+  position: relative;
+  background-color: #093a7b;
+  text-align: center;
+}
+.footer_section p{
+  border-top: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 20px 0;
+  margin: 0;
+}
+.footer_section p a{
+  color: #5693E3;
+  text-decoration: none;
+}
+.footer_section p a:hover{
+  color: #eee148;
+}
+
+
+/* Responsive Mobile */
+@media (min-width: 1200px){
+  .container{
+    max-width: 1170px;
+  }
+}
+
+@media (min-width: 992px){
+  .hero_area{
+    min-height: auto;
+  }
+  .slider_section .detail-box h1{
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 768px){
+  .product_section .box .img-box img{
+    height: 145px;
+  }
+  .info_section .row>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .info_section .row>div:not(:nth-child(1)){
+    margin-bottom: 25px;
+  }
+  .info_section .info_form .social_box{
+    justify-content: center;
+  }
+  .info_section .info_form .social_box a{
+    margin: 0 15px;
+  }
+}
+
+@media (max-width: 768px){
+  .hero-img-container {
+    display: none;
+  }
+  .hero-border {
+    text-align: center;
+  }
+  .sells-header {
+    text-align: center;
+  }
+  .sells-item {
+    gap: 1.5rem;
+  }
+  .about-us-row {
+    height: 100vh;
+  }
+  .about-photo {
+    display: none;
+  }
+  .services_section {
+    background-image: url('about_peace.jpg');
+  }
+  .about_section .detail-box {
+    text-align: center;
+  }
+  .heading_container{
+    align-items: center;
+  }
+}
+
+@media (max-width: 575px){
+  .nav-store-title, .bf-icon {
+    display: none;
+  }
+}
+
+@media (min-width: 420px){
+  .slider_section .detail-box h1{
+    font-size: 20px;
+  }
+}

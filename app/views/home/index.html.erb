@@ -1,5 +1,267 @@
-<%= render 'featured_products', { products: @featured_products } if @featured_products.try(:any?) %>
-<%= render 'collection', { title: "Shop Collection", products: @collection_products } if @collection_products.try(:any?) %>
-<%= render 'collections_with_call_to_action', { products: @cta_collection_products[0..1] } if @cta_collection_products.try(:any?) %>
-<%= render 'featured_product_banner', { product: @cta_collection_products[2] } if @cta_collection_products && @cta_collection_products.size > 2 %>
-<%= render 'collection', { title: "New Arrivals", products: @new_arrivals } if @new_arrivals.try(:any?) %>
+<%#= render 'featured_products', { products: @featured_products } if @featured_products.try(:any?) %>
+<%#= render 'collection', { title: "Shop Collection", products: @collection_products } if @collection_products.try(:any?) %>
+<%#= render 'collections_with_call_to_action', { products: @cta_collection_products[0..1] } if @cta_collection_products.try(:any?) %>
+<%#= render 'featured_product_banner', { product: @cta_collection_products[2] } if @cta_collection_products && @cta_collection_products.size > 2 %>
+<%#= render 'collection', { title: "New Arrivals", products: @new_arrivals } if @new_arrivals.try(:any?) %>
+
+<!--New Template-->
+
+<div class="hero_area">
+  <div class="hero_filter">
+
+  <!--Slider Section Start-->
+    <section class="slider_section">
+      <div class="container">
+        <div class="row hero-border">
+          <div class="col-md-6 hero-text-container">
+            <div class="detail-box">
+              <h1>Organic Solutions to Wellness and Comfort</h1>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio consequatur sint vero eaque!</p>
+              <%= link_to products_path do %>
+                Shop Now
+              <% end %>
+            </div>
+          </div>
+          <div class="col-md-6 hero-img-container h-100">
+            <div class="img-area">
+              <%= image_tag "bsmove_big.png", class:"hero-img" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <!--SliderSection End-->
+  </div>
+</div>
+
+<!--Sell Section Start-->
+  <section class="sell_section">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0 sell-img-container">
+          <div class="sell-img-box">
+            <%= image_tag "bf_icon.png" %>
+          </div>
+        </div>
+        <div class="col-md-6 ml-auto sell-content-container">
+          <div class="detail-box pr-md-3 h-100">
+            <div class="heading-container">
+              <h2 class="ml-4 mb-4 sells-header">Inspired by traditional knowledge</h2>
+            </div>
+
+              <div class="sells-item">
+                <div class="col-md-3 sells-icon">
+                  <i class="fa-solid fa-leaf"></i>
+                </div>
+                <div class="col-md-9 sells-info">
+                  <h3 class="sells-point">100% Organic</h3>
+                  <p class="sells-detail">Crafted from natural ingredients.</p>
+                </div>
+              </div>
+
+              <div class="sells-item">
+                <div class="col-md-3 sells-icon">
+                  <i class="fa-solid fa-briefcase-medical"></i>
+                </div>
+                <div class="col-md-9 sells-info">
+                  <h3 class="sells-point">Healing Properties</h3>
+                  <p class="sells-detail">Focus on skin care and pain relief.</p>
+                </div>
+              </div>
+
+              <div class="sells-item">
+                <div class="col-md-3 sells-icon">
+                  <i class="fa-solid fa-peace"></i>
+                </div>
+                <div class="col-md-9 sells-info">
+                  <h3 class="sells-point">Handmade for Quality</h3>
+                  <p class="sells-detail">Ensured quality for each request.</p>
+                </div>
+              </div>
+
+
+
+
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+<!--Sell Section End-->
+
+
+<!--Product Section Start-->
+  <section class="product_section layout_padding">
+    <div class="container">
+      <div class="leading_container heading_center">
+        <h2 class="text-center products-header">Our Featured Products</h2>
+      </div>
+      <div class="row">
+
+      <% @featured_products.each_with_index do |product, index| %>
+        <div class="col-sm-6 col-lg-4">
+          <div class="box">
+            <div class="img-box">
+              <% image = product.gallery.images.second || product.gallery.images.first %>
+              <%= render(ImageComponent.new(
+                image: image,
+                size: 'small',
+                class: 'feature-product-img'
+              )) %>
+              <%= link_to products_path, class:"add_cart_btn" do %>
+                More Info
+              <% end %>
+            </div>
+            <div class="detail-box">
+              <h5 class="text-center"><%= product.name %></h5>
+              <p class="text-center"><%= product.description %></p>
+              <div class="product_info">
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      </div>
+
+    </div>
+  </section>
+<!--Product Section End-->
+
+<!--About Section Start-->
+  <section class="about_section">
+    <div class="container-fluid">
+      <div class="row about-us-row">
+        <div class="col-md-6 ml-auto about-details">
+          <div class="detail-box pr-md-3">
+            <div class="heading_container">
+              <h2 class="about-header">About Us</h2>
+            </div>
+            <p class="about-content">We are Blue Flowers, a home-based business. Our mission is to offer our customers an organic and safe alternative to their personal care such as wellness, hygiene, aromatherapy, and comfort. We have amassed a great number of customers nationally and internationally through word of mouth from family and friends. <br><br> Our natural products include body butters and body wash infused with anti-inflammatory essential oils. Both the body washes and body butters are infused with additional oils from popular scents and removes minor discomfort.</p>
+            <a href="#">Read More</a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0 about-photo">
+          <div class="about-img-box">
+            <%= image_tag "about_peace.jpg", class:"about-image" %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+<!--About Section End-->
+
+<!--Service Section Start-->
+  <div class="services_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2 class="service-header">Services</h2>
+      </div>
+      <div class="row">
+
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <i class="fa-solid fa-hands-holding-circle service-icon"></i>
+            </div>
+            <div class="detail-box">
+              <h5 class="service-sub-header">Hand Crafted</h5>
+              <p class="service-sub-detail">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <i class="fa-solid fa-truck service-icon"></i>
+            </div>
+            <div class="detail-box">
+              <h5 class="service-sub-header">Fast Shipping</h5>
+              <p class="service-sub-detail">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="box">
+            <div class="img-box">
+              <i class="fa-solid fa-medal service-icon"></i>
+            </div>
+            <div class="detail-box">
+              <h5 class="service-sub-header">Best Quality</h5>
+              <p class="service-sub-detail">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+<!--Service Section End-->
+
+<!--Footer Info Section Start-->
+  <section class="info_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="info_contact">
+          <h5><a href="#" class="navbar-brand"><span>Blue Flowers Wellness</span></a></h5>
+          <p><i class="fa fa-map-marker" aria-hidden="true"></i> Address</p>
+          <p><i class="fa fa-phone" aria-hidden="true"></i> +01 1234567890</p>
+          <p><i class="fa fa-envelope" aria-hidden="true"></i> blueflowerswellness@gmail.com</p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_info">
+          <h5>Information</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptas molestias voluptates necessitatibus ea laborum quam nobis.</p>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="info_links">
+          <h5>Useful Links</h5>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="info_form">
+          <h5>Newsletter</h5>
+
+          <form action="">
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+          </form>
+
+          <div class="social_box">
+            <a href="#"><i class="fa fa-facebook" area-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-x" area-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-instagram" area-hidden="true"></i></a>
+            <a href="#"><i class="fa fa-youtube" area-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+<!--Footer Info Section End-->
+
+<!--Footer Bottom Start-->
+  <footer class="footer_section">
+    <div class="container">
+      <p>&copy; 2024 All Rights Reserved By <a href="#">RA-Dev</a></p>
+    </div>
+  </footer>
+<!--Footer Bottom end-->

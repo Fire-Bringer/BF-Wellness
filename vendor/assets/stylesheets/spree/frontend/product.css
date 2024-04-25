@@ -1,0 +1,120 @@
+/* Product Section */
+
+.products-header{
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 10vw, 2.2rem);
+  font-style: normal;
+  color: #093a7b;
+}
+
+.product_section{
+  background-color: #F0FBFF;
+}
+
+.product-img{
+  width: 10vw;
+}
+
+.img-box{
+  width: 15vw;
+}
+
+.product_section .heading_container{
+  margin-bottom: 25px;
+}
+
+.product_section .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  margin-top: 15px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product_section .box .img-box{
+  background-color: #D3F4FF;
+  border: 2px solid #093a7b;
+  width: 100%;
+  height: 275px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 15px;
+  border-radius: 2rem;
+}
+
+.product_section .box .img-box img{
+  height: 15rem;
+  max-width: 100%;
+}
+
+.product_section .box .img-box .add_cart_btn{
+  display: inline-block;
+  width: 175px;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  background-color: #093a7b;
+  color: #ffffff;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  transition: all .3s;
+  opacity: 0;
+  z-index: 3;
+  text-decoration: none;
+}
+
+.product_section .box .img-box .add_cart_btn:hover{
+  background-color: #eee148;
+  font-weight: bold;
+  color: #093a7b;
+  border: 1px solid #093a7b;
+}
+
+.product_section .box .img-box::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 1;
+  opacity: 0;
+  transition: all .2s;
+}
+
+.product_section .box .detail-box{
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #093a7b;
+  font-family: "Bodoni Moda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.product_section .box .product_info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.product_section .box .star_container{
+  color: #f2b01e;
+}
+
+.product_section .box:hover .img-box .add_cart_btn{
+  opacity: 1;
+  visibility: visible;
+}
+
+.product_section .box:hover .img-box::before{
+  opacity: .55;
+}
