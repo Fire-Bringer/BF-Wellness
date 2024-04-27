@@ -1,7 +1,9 @@
 # config/initializers/cloudinary.rb
 
+cloudinary_url = URI.parse(ENV['CLOUDINARY_URL'])
 Cloudinary.config do |config|
-  config.cloud_name = ENV['CLOUD_NAME']
-  config.api_key = ENV['API_KEY']
-  config.api_secret = ENV['API_SECRET']
+  config.cloud_name = cloudinary_url.host
+  config.api_key = cloudinary_url.user
+  config.api_secret = cloudinary_url.password
+  config.secure = true # Optionally, enable secure HTTPS URLs
 end
