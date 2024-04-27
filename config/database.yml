@@ -23,7 +23,7 @@ default: &default
   database: <%= ENV['DATABASE'] %>
   username: <%= ENV['USER'] %>
   password: <%= ENV['PASSWORD'] %>
-  host: 127.0.0.1
+  host: localhost
   port: 5432
 
 
