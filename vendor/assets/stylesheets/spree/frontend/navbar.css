@@ -19,9 +19,22 @@
   font-family: "Cormorant Garamond", serif;
   font-optical-sizing: auto;
   color: white;
+  text-decoration: none;
 }
 
-.taxon-nav > a{
+.fill-black {
+  fill: white;
+}
+
+.search-fill {
+  fill: #093a7b;
+}
+
+.title-line{
+  text-decoration: none;
+}
+
+.nav-filters > a{
   font-family: "Bodoni Moda", serif;
   color: white;
   text-decoration: none;

@@ -12,7 +12,7 @@
       </button>
     </div>
     <div class="flex items-center gap-x-4 xl:gap-x-8 w-full justify-center lg:justify-start">
-      <%= link_to root_path, class: 'absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
+      <%= link_to root_path, class: 'title-line absolute lg:relative left-1/2 lg:left-0 lg:-translate-x-0 -translate-x-1/2 flex items-center space-x-3' do %>
         <%= image_tag "bf_icon.png", width:"45px", height:"auto", class:"rounded-circle border bf-icon" %>
         <span class="uppercase nav-store-title">Blue Flowers Wellness</span>
       <% end %>
@@ -50,7 +50,7 @@
             root_taxon: categories.root,
             current_taxon: taxon,
             max_level: 1,
-            item_classes: 'font-sans-md',
+            item_classes: 'font-sans-md nav-filters',
             current_item_classes: 'text-solidus-red',
             )) if categories %>
         <% end %>
